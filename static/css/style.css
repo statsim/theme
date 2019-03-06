@@ -44,7 +44,7 @@ article code {
 }
 
 .latest
-{-
+{
   padding: 10px 10px;
   border-bottom: 1px solid #eee;
 }
@@ -138,6 +138,21 @@ a:hover {
 
 
 /* Code */
+div.input_area {
+  background: #eeeef1 !important;
+  border-radius: 5px !important;
+  padding: 5px !important;
+  border: none !important;
+}
+
+div.output_area {
+  background: #fff !important;
+  box-shadow: 0 0 10px #DADADA !important;
+  border-radius: 5px !important;
+  margin-top: 10px !important;
+  padding: 4px !important;
+}
+
 .highlight pre {
   font-size: 14px;
   overflow: auto;
