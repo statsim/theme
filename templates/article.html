@@ -23,7 +23,15 @@
                 {{ article.summary }}
               </div>
               {{ article.content }}
+
+              {% if article.next_article_in_category %}
+		<div class="next-post">
+                  Read next: <a href="{{ SITEURL }}/{{ article.next_article_in_category.url}}">{{ article.next_article_in_category.title }}</a>
+                </div>
+              {% endif %}
             </div>
+
+            {% if article.author %}
             <div class="post_list">
                 <span>By </span>
                 <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
@@ -33,7 +41,9 @@
                     {{ article.category }}
                   </a>
                 </span>
+                {% if article.locale_date %}
                 <p class="post_date">{{ article.locale_date }}</p>
+                {% endif %}
                 {% if article.tags %}
                 <div><span>Tags : </span>
                         {% for tag in article.tags %}
@@ -42,6 +52,8 @@
                 </div>
                 {% endif %}
             </div>
+            {% endif %}
+
             {% if DISQUS_SITENAME %}
                 <div class="comments">
                     <h2>Comments !</h2>

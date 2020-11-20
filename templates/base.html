@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="{{ DEFAULT_LANG }}" itemscope itemtype="http://schema.org/Person">
+<html lang="{{ DEFAULT_LANG }}">
 <head>
     {% block head %}
         <meta charset="utf-8">
         <!-- Site Meta Data -->
         <title>{% block title %} {{ SITENAME }} | {{ SIDEBAR_DIGEST }} {% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{{ AUTHOR_DESCRIPTION }}">
+        <meta name="description" content="{{ DESCRIPTION }}">
         <meta name="author" content="{{ AUTHOR }}">
 
         <link rel="shortcut icon" href="{{ FAVICON }}">
@@ -14,9 +14,11 @@
         <!-- schema.org -->
         <meta itemprop="name" content="{{ SITENAME }}">
         <meta itemprop="image" content="{{ AVATAR }}">
-        <meta itemprop="description" content="{{ AUTHOR_DESCRIPTION }}">
+        <meta itemprop="description" content="{{ DESCRIPTION }}">
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Font -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+
         <!-- Style Meta Data -->
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css"/>
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css" type="text/css"/>
@@ -56,25 +58,19 @@
       <img src="{{ BASEURL }}/images/logo.png" class="logo">
     </a>
     <h1>{{ SITENAME }}</h1>
-    <a href="{{ BASEURL }}/">English</a>
-    <br>
-    <a href="{{ BASEURL }}/ru/">Russian</a>
+    <a href="{{ BASEURL }}/">En</a> - <a href="{{ BASEURL }}/ru/">Ru</a>
     {% if SIDEBAR_DIGEST %}
         <p>{{ SIDEBAR_DIGEST }}</p>
     {% endif %}
-    <br>
 
     <nav class="nav">
         <ul class="list-bare">
-
             {% for title, link in MENUITEMS %}
                 <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
             {% endfor %}
-
             {% if DISPLAY_PAGES_ON_MENU and pages %}{% for p in pages %}
                 <li><a class="nav__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
             {% endfor %}{% endif %}
-
         </ul>
     </nav>
 
