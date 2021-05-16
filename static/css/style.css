@@ -79,6 +79,11 @@ article section .blog-post
   font-size: 16px;
 }
 
+article section .blog-post h2
+{
+  margin-top: 40px;
+}
+
 /* Body */
 body {margin: 0}
 body > article, footer {
